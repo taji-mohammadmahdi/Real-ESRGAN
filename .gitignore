@@ -10,5 +10,6 @@ pycache/
 
 # Project data
 input/
+enhanced/
 output/
 weights/
