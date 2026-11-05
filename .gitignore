@@ -1,0 +1,14 @@
+# Virtual Environment
+.venv/
+
+# Python cache
+pycache/
+*.py[cod]
+
+# macOS
+.DS_Store
+
+# Project data
+input/
+output/
+weights/
