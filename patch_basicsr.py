@@ -1,7 +1,12 @@
 from pathlib import Path
-import basicsr
+from importlib.util import find_spec
 
-basicsr_path = Path(basicsr.__file__).parent
+spec = find_spec("basicsr")
+
+if spec is None or spec.origin is None:
+    raise ModuleNotFoundError("BasicSR is not installed.")
+
+basicsr_path = Path(spec.origin).parent
 target_file = basicsr_path / "data" / "degradations.py"
 
 content = target_file.read_text()
@@ -25,3 +30,4 @@ else:
             break
     else:
         raise RuntimeError("Could not find the expected import.")
+    
